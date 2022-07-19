@@ -29,7 +29,7 @@ include_once 'includes/message.php';
             ?>
             <tr>
                 <th id="id"><?php echo $dados['id']; ?></th>
-                <td id="imgprod"><img src="<?php echo $dados['imgProd']; ?>" ></td>
+                <td id="imgproduto"><img src="<?php echo $dados['imgProduto']; ?>" ></td>
                 <td id="nome"><?php echo $dados['nome']; ?></td>
                 <td id="valor"><?php echo $dados['valor']; ?></td>
                 <td id="medida"><?php echo $dados['medida']; ?></td>

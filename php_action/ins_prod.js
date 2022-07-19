@@ -18,11 +18,11 @@ function insProd(table) {
     let tdQtd = document.createElement("td");
     let tdMedida = document.createElement("td");
     let btnRemove = document.createElement("a");
-    let imgRemove = document.createElement("img");
+    let imgRemove = document.createElement("i");
 
     // ATRIBUIÇÃO DE VALORES
     btnRemove.setAttribute("onclick", "removeProd('" + table.codBarras + "'); valorTotal();");
-    imgRemove.src = "assets/dash-square.svg";
+    imgRemove.className = "fa-regular fa-square-minus efeito-opacidade";
     imgRemove.style.placeItems = "center";
     tdQtd.style.textAlign = "center";
     tdCodbarras.style.textAlign = "center";

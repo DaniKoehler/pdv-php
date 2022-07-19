@@ -12,11 +12,12 @@ if(isset($_POST['btn-cadastrar'])) {
     $imgprod = $_FILES['imgprod']; // Recebe o arquivo
     $extensao = pathinfo($imgprod['name'], PATHINFO_EXTENSION); // Pega a extensão do arquivo
     $nome_imagem = md5(uniqid($imgprod['name'])) . "." . $extensao; // Gera um nome único para o arquivo
-    $diretorio = 'img/'; // Diretório para onde enviaremos o arquivo
+    $diretorio = '../img/'; // Diretório para onde enviaremos o arquivo
     $imgproduto = $diretorio.$nome_imagem; // Monta o caminho do arquivo
-    move_uploaded_file($_FILES['imgprod']['tmp_name'], $imgproduto); // Faz o upload da imagem
-    
-    $sql = "INSERT INTO tbprodutos (nome, valor, medida, codbarras, valorreal, imgprod, data) VALUES ('$nome', '$valor', '$medida', '$codbarras', '$valorreal', '$imgprod', NOW())";
+    $moverArquivo = move_uploaded_file($_FILES['imgprod']['tmp_name'], $imgproduto); // Faz o upload da imagem
+
+    $sql = "INSERT INTO tbprodutos (nome, valor, medida, codbarras, valorreal, imgproduto, data) 
+    VALUES ('$nome', '$valor', '$medida', '$codbarras', '$valorreal', '$imgproduto', NOW())";
     $stmt = mysqli_query($connect, $sql);
 
     if($stmt) {
